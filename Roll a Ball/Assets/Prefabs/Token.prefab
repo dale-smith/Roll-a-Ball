@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33110840166492318}
   - component: {fileID: 65787453149497942}
   - component: {fileID: 23526711052656404}
-  - component: {fileID: 114532448187284516}
   - component: {fileID: 54399884557865692}
+  - component: {fileID: 114110862553199404}
   m_Layer: 0
   m_Name: Token
   m_TagString: Token
@@ -110,7 +110,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114532448187284516
+--- !u!114 &114110862553199404
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

@@ -1,18 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
     // Public Variables - Public allows you to make changes to this variable in the Unity Editor.
-    public float speed; 
+    public float speed;
+    public Text countText;
+    public Text winText;
 
-    //Private Variables
+    //Private Variables - Privates ensures you cannot edit it in the Unity Editor.
     private Rigidbody rb; // Accessing the Rigidbody FUnction in the Unity Inspector Dashboard of the object.
+    private int count;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-	}
+        count = 0;
+        SetCountText();
+        winText.text = "";
+    }
 
     //Called just before nay physics calculations this is where physics will go
     void FixedUpdate() {
@@ -32,6 +39,19 @@ public class PlayerController : MonoBehaviour {
         {
             // Disables the Game Object, allowing it to retain its value.
             other.gameObject.SetActive(false);
+
+            // Counting UI 
+            count = count + 1; // also written as: count = count++;
+            SetCountText();
+        }
+    }
+
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+        if (count >= 12)
+        {
+            winText.text = "You Win!";
         }
     }
 }
